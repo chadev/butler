@@ -8,7 +8,8 @@ defmodule ChadevBot.Mixfile do
      elixirc_paths: elixirc_paths(Mix.env),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps
+    ]
   end
 
   # Configuration for the OTP application
@@ -16,8 +17,14 @@ defmodule ChadevBot.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [
-      applications: [:logger, :butler]
+      applications: [:logger, :butler, :poison, :httpoison, :websocket_client]
     ]
+  end
+
+  def heroku do
+    [app: "chadev-bot",
+     slug_command: "slug",
+     process_type: "web"]
   end
 
   def elixirc_paths(_), do: ["plugins"]
@@ -32,6 +39,10 @@ defmodule ChadevBot.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:butler, "~> 0.4.2"}]
+    [
+      {:websocket_client, git: "http://github.com/jeremyong/websocket_client"},
+      {:butler, "~> 0.4.2"},
+      {:exrm, "~> 0.19.6"}
+    ]
   end
 end
