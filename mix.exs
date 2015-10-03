@@ -17,14 +17,8 @@ defmodule ChadevBot.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [
-      applications: [:logger, :butler, :poison, :httpoison, :websocket_client]
+      applications: [:logger, :butler]
     ]
-  end
-
-  def heroku do
-    [app: "chadev-bot",
-     slug_command: "slug",
-     process_type: "web"]
   end
 
   def elixirc_paths(_), do: ["plugins"]
@@ -41,8 +35,7 @@ defmodule ChadevBot.Mixfile do
   defp deps do
     [
       {:websocket_client, git: "http://github.com/jeremyong/websocket_client"},
-      {:butler, "~> 0.4.2"},
-      {:exrm, "~> 0.19.6"}
+      {:butler, "~> 0.4.2"}
     ]
   end
 end
