@@ -1,8 +1,8 @@
 defmodule ChadevBot.Example do
   use Butler.Plugin
 
-  # TODO - Add some comments with examples of how to bulid plugins
-  def respond("example me", state) do
-    {:reply, "This is just an example response", state}
+  respond ~r/example me/, conn do
+    reply conn, "some other thing"
+    reply conn, "This is just an example response"
   end
 end
