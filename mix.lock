@@ -1,5 +1,5 @@
 %{"bbmustache": {:hex, :bbmustache, "1.0.3"},
-  "butler": {:hex, :butler, "0.5.2"},
+  "butler": {:hex, :butler, "0.6.0"},
   "conform": {:hex, :conform, "0.16.0"},
   "erlware_commons": {:hex, :erlware_commons, "0.15.0"},
   "exrm": {:hex, :exrm, "0.19.6"},

@@ -1,17 +1,11 @@
 defmodule ChadevBot.Chacam do
   @moduledoc """
-  This plugin returns random camera stills from street cameras in the 
+  This plugin returns random camera stills from street cameras in the
   Chattanooga area that are maintained by the Tennessee Department of Transportation:
       http://ww2.tdot.state.tn.us/tsw/smartmap.htm
 
   I got this idea from not having windows on the 4th Floor and needing to know
   what the weather conditions are like outside.
-
-
-  ## Usage:
-
-
-     butler> butler chacam
 
   Author: Sean Brewer (seabre)
   """
@@ -45,9 +39,9 @@ defmodule ChadevBot.Chacam do
   end
 
   def parse_xml(body) do
-    {root, _} = 
-      body 
-      |> :binary.bin_to_list 
+    {root, _} =
+      body
+      |> :binary.bin_to_list
       |> :xmerl_scan.string
 
     entry_els = :xmerl_xpath.string('.//entry', root)
@@ -79,6 +73,11 @@ defmodule ChadevBot.Chacam do
     end
   end
 
+
+
+  @usage """
+  butler chacam - gets an image from a Chattanooga traffic camera.
+  """
   respond ~r/chacam/, conn do
     reply conn, "#{camera_message}"
   end

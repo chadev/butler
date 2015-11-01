@@ -4,8 +4,8 @@ config :butler,
   name: System.get_env("BUTLER_NAME") || "butler",
   adapter: Butler.Adapters.Console,
   plugins: [
+    {Butler.Plugins.Help, []},
     {ChadevBot.Cage, []},
-    {ChadevBot.Example, []},
     {ChadevBot.Chacam, []}
   ]
 
