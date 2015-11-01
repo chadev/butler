@@ -62,16 +62,16 @@ defmodule ChadevBot.Chacam do
     hd(Enum.take_random(cams, 1))
   end
 
-  def camera_message(body) do
+  def camera_message_ok(body) do
     cam = choose_camera(body)
 
     "Here's what it looks like at #{cam["summary"]}: #{cam["imageurl"]} See more at #{@tdot_url}."
   end
 
-  def get_cams() do
+  def camera_message() do
     case HTTPoison.get(@url) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        camera_message(body)
+        camera_message_ok(body)
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         "Sorry. The feed isn't available right now."
       {:error, %HTTPoison.Error{reason: reason}} ->
@@ -80,6 +80,6 @@ defmodule ChadevBot.Chacam do
   end
 
   respond ~r/chacam/, conn do
-    reply conn, "#{get_cams()}"
+    reply conn, "#{camera_message()}"
   end
 end
