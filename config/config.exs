@@ -5,7 +5,8 @@ config :butler,
   adapter: Butler.Adapters.Console,
   plugins: [
     {ChadevBot.Cage, []},
-    {ChadevBot.Example, []}
+    {ChadevBot.Example, []},
+    {ChadevBot.Chacam, []}
   ]
 
 import_config "#{Mix.env}.exs"
