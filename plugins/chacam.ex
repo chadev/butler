@@ -68,7 +68,7 @@ defmodule ChadevBot.Chacam do
     "Here's what it looks like at #{cam["summary"]}: #{cam["imageurl"]} See more at #{@tdot_url}."
   end
 
-  def camera_message() do
+  def camera_message do
     case HTTPoison.get(@url) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         camera_message_ok(body)
@@ -80,6 +80,6 @@ defmodule ChadevBot.Chacam do
   end
 
   respond ~r/chacam/, conn do
-    reply conn, "#{camera_message()}"
+    reply conn, "#{camera_message}"
   end
 end
