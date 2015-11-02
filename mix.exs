@@ -35,7 +35,7 @@ defmodule ChadevBot.Mixfile do
   defp deps do
     [
       {:websocket_client, git: "http://github.com/jeremyong/websocket_client"},
-      {:butler, "~> 0.6.0"}
+      {:butler, "~> 0.6.1"}
     ]
   end
 end
