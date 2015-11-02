@@ -1,0 +1,16 @@
+{
+  "name":"butler",
+  "scripts":{},
+  "env":{
+    "BUILDPACK_URL":{
+      "required":true
+    },
+    "BUTLER_SLACK_API_KEY":{
+      "required":true
+    },
+    "MIX_ENV":{
+      "required":true
+    }
+  },
+  "addons":[]
+}
