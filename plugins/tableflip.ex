@@ -8,10 +8,20 @@ defmodule ChadevBot.Tableflip do
   @usage """
   butler tableflip - replies with flipped tables.
   """
+
+  def flip_table do
+    :random.seed(:os.timestamp)
+    table_list = [
+        "(╯°□°）╯︵ ┻━┻",
+        "(╯°□°）╯︵ <ǝlqɐʇ>",
+        "the table flipped you! ノ┬─┬ノ ︵ ( \o°o)\ ",
+        "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻"
+      ]
+
+    hd(Enum.take_random(table_list, 1))
+  end
+
   respond ~r/tableflip/, conn do
-    reply conn, "(╯°□°）╯︵ ┻━┻"
-    reply conn, "(╯°□°）╯︵ <ǝlqɐʇ>"
-    reply conn, "the table flipped you! ノ┬─┬ノ ︵ ( \o°o)\ "
-    reply conn, "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻"
+    reply conn, flip_table
   end
 end
