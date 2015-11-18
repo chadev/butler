@@ -18,7 +18,7 @@ defmodule ChadevBot.Tableflip do
         "┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻"
       ]
 
-    hd(Enum.take_random(table_list, 1))
+    Enum.random(table_list)
   end
 
   respond ~r/tableflip/, conn do
