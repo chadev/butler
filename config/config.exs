@@ -6,7 +6,8 @@ config :butler,
   plugins: [
     {Butler.Plugins.Help, []},
     {ChadevBot.Cage, []},
-    {ChadevBot.Chacam, []}
+    {ChadevBot.Chacam, []},
+    {ChadevBot.Tableflip, []}
   ]
 
 import_config "#{Mix.env}.exs"
