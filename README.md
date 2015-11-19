@@ -4,6 +4,14 @@ ChadevBot is a bot built with Butler.
 
 ## Running ChadevBot locally
 
+Butler runs on elixir which can be installed from your package manager of choice.
+
+Once elixir is installed you should be able to run:
+
+    $ mix deps.get
+    
+to pull down all of the necesary dependencies.
+
 You may need to run ChadevBot locally in order to develop plugins and test new features.
 The Butler framework provides a repl that can be used for local development.
 
