@@ -5,7 +5,7 @@ config :butler,
   adapter: Butler.Adapters.Console,
   plugins: [
     {Butler.Plugins.Help, []},
-    {ChadevBot.Cage, []},
+    {Butler.Cage, []},
     {ChadevBot.Chacam, []},
     {ChadevBot.Tableflip, []}
   ]
