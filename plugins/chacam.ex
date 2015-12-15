@@ -76,7 +76,7 @@ defmodule ChadevBot.Chacam do
 
 
   @usage """
-  butler chacam - gets an image from a Chattanooga traffic camera.
+  #{name} chacam - gets an image from a Chattanooga traffic camera.
   """
   respond ~r/chacam/, conn do
     reply conn, "#{camera_message}"
