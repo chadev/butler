@@ -1,6 +1,7 @@
 %{"bbmustache": {:hex, :bbmustache, "1.0.3"},
-  "butler": {:hex, :butler, "0.7.0"},
+  "butler": {:hex, :butler, "0.7.1"},
   "butler_cage": {:hex, :butler_cage, "0.0.2"},
+  "butler_xkcd": {:git, "https://github.com/craiglyons/butler_xkcd", "a0bd892917d5939f91c0677f50b3756df9e61840", []},
   "conform": {:hex, :conform, "0.16.0"},
   "erlware_commons": {:hex, :erlware_commons, "0.15.0"},
   "exrm": {:hex, :exrm, "0.19.6"},

@@ -24,11 +24,11 @@ defmodule ChadevBot.Chacam do
     Enum.map els, fn(i) ->
       xmlElement(i, :content)
       |> Enum.filter(&(Record.is_record(&1, :xmlElement)))
-      |> Enum.reduce Map.new, fn(el, acc) ->
+      |> Enum.reduce(Map.new, fn(el, acc) ->
         nm = Atom.to_string(xmlElement(el, :name))
         [content] = xmlElement(el, :content)
         Map.put(acc, nm, to_string(xmlText(content, :value)))
-      end
+      end)
     end
   end
 

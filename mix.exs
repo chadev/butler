@@ -4,7 +4,7 @@ defmodule ChadevBot.Mixfile do
   def project do
     [app: :chadev_bot,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -36,7 +36,8 @@ defmodule ChadevBot.Mixfile do
     [
       {:websocket_client, git: "http://github.com/jeremyong/websocket_client"},
       {:butler, "~> 0.7.1"},
-      {:butler_cage, "~> 0.0.2"}
+      {:butler_cage, "~> 0.0.2"},
+      {:butler_xkcd, git: "https://github.com/craiglyons/butler_xkcd"}
     ]
   end
 end

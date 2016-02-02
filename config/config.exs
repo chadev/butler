@@ -7,7 +7,8 @@ config :butler,
     {Butler.Plugins.Help, []},
     {Butler.Cage, []},
     {ChadevBot.Chacam, []},
-    {ChadevBot.Tableflip, []}
+    {ChadevBot.Tableflip, []},
+    {Butler.XKCD, []}
   ]
 
 import_config "#{Mix.env}.exs"
